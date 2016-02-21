@@ -1,0 +1,10 @@
+<h1>メッセージ一覧</h1>
+<% @responce.each do |responce| %>
+  名前:<%= responce.text %>
+  <br>
+<% end %>
+
+<%= form_for Responce.new do |f| %>
+  <%= f.text_area :text, cols: 40, rows: 5 ,maxlength: 140 %>
+  <%= f.submit '保存' %>
+<% end %>
